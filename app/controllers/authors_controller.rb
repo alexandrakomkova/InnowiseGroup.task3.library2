@@ -12,7 +12,7 @@ class AuthorsController < ApplicationController
 
       # GET /books/1
   def show
-    @author = Author.find(params[:id])
+    @author = set_author
     render json: { status: 'SUCCESS', data: @author }
   end
 
@@ -29,7 +29,7 @@ class AuthorsController < ApplicationController
 
       # PATCH/PUT /books/1
   def update
-    @author = Author.find(params[:id])
+    @author = set_author
 
     if @author.update(author_params)
       render json: { status: 'SUCCESS', data: @author }
@@ -40,7 +40,7 @@ class AuthorsController < ApplicationController
 
       # DELETE /books/1
   def destroy
-    @author = Author.find(params[:id])
+    @author = set_author
     @author.destroy
     render json: { status: 'SUCCESS', message: 'deleted author', data: @author }
   end

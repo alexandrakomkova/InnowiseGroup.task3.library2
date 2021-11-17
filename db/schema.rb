@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_16_114158) do
+ActiveRecord::Schema.define(version: 2021_11_16_161746) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,14 @@ ActiveRecord::Schema.define(version: 2021_11_16_114158) do
     t.text "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "authors_id"
+    t.bigint "publishers_id"
+    t.bigint "genres_id"
+    t.bigint "formats_id"
+    t.index ["authors_id"], name: "index_books_on_authors_id"
+    t.index ["formats_id"], name: "index_books_on_formats_id"
+    t.index ["genres_id"], name: "index_books_on_genres_id"
+    t.index ["publishers_id"], name: "index_books_on_publishers_id"
   end
 
   create_table "formats", force: :cascade do |t|
@@ -49,4 +57,8 @@ ActiveRecord::Schema.define(version: 2021_11_16_114158) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "books", "authors", column: "authors_id"
+  add_foreign_key "books", "formats", column: "formats_id"
+  add_foreign_key "books", "genres", column: "genres_id"
+  add_foreign_key "books", "publishers", column: "publishers_id"
 end

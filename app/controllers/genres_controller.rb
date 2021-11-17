@@ -2,48 +2,47 @@
 #
 # .rubocop.yml
 class GenresController < ApplicationController
-      # before_action :set_book, only: [:show, :update, :destroy]
+  # before_action :set_book, only: [:show, :update, :destroy]
 
       # GET /books
   def index
     @genres = Genre.all
-    genres = Genre.all
-    #render json: { status: 'SUCCESS', data: @genres }
+    render json: { status: 'SUCCESS', data: @genres }
   end
 
       # GET /books/1
   def show
-    genre = Genre.find(params[:id])
-    render json: { status: 'SUCCESS', data: genre }
+    @genre = Genre.find(params[:id])
+    render json: { status: 'SUCCESS', data: @genre }
   end
 
       # POST /books
   def create
-    genre = Genre.new(genre_params)
+    @genre = Genre.new(genre_params)
 
-    if genre.save
-      render json: { status: 'SUCCESS', data: genre }, status: :created
+    if @genre.save
+      render json: { status: 'SUCCESS', data: @genre }, status: :created
     else
-      render json: { status: 'ERROR', data: genre.errors }, status: :unprocessable_entity
+      render json: { status: 'ERROR', data: @genre.errors }, status: :unprocessable_entity
     end
   end
 
       # PATCH/PUT /books/1
   def update
-    genre = Genre.find(params[:id])
+    @genre = genre_params
 
-    if genre.update(genre_params)
-      render json: { status: 'SUCCESS', data: genre }
+    if @genre.update(genre_params)
+      render json: { status: 'SUCCESS', data: @genre }
     else
-      render json: { status: 'ERROR', data: genre.errors }, status: :unprocessable_entity
+      render json: { status: 'ERROR', data: @genre.errors }, status: :unprocessable_entity
     end
   end
 
       # DELETE /books/1
   def destroy
-    genre = Genre.find(params[:id])
-    genre.destroy
-    render json: { status: 'SUCCESS', message: 'deleted genre', data: genre }
+    @genre = genre_params
+    @genre.destroy
+    render json: { status: 'SUCCESS', message: 'deleted genre', data: @genre }
   end
 
       private

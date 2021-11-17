@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get '/books', to: 'books#index'
+  root to: 'books#index'
+
   resources :books
   resources :genres
   resources :authors
