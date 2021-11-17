@@ -5,6 +5,7 @@
     <script src = "crud_functions.js"></script>
     <script src = "js_helper.js"></script>
     <script src = "book.js"></script>
+    <script src = "genre.js"></script>
     <meta charset="UTF-8">
     <title>Library</title>
 </head>
@@ -19,12 +20,36 @@
     genre id <input id="genres_id" type="number" value="" title=""/><br>
     format id <input id="formats_id" type="number" value="" title=""/><br>
     <p>
-        <button id="add_books" onclick="add_book();">new book</button>
-        <button id="delete_books" onclick="delete_book();">delete book</button>
-        <button id="update_books" onclick="update_book();">update book</button>
-        <button id="get_books" onclick="get_book();">get book by id</button>
+        <button id="add_book" onclick="add_book();">new</button>
+        <button id="delete_book" onclick="delete_book();">delete</button>
+        <button id="update_book" onclick="update_book();">update</button>
+        <button id="get_book" onclick="get_book();">get by id</button>
     </p><br>
     <div id="result_book"> </div>
+</div>
+<h1>Genres</h1>
+<div id="genre">
+    genre id   <input id="genre_id" type="number"/><br>
+    genre name <input id="genre_name" type="text" maxlength="20"/><br>
+    <p>
+        <button id="add_genre" onclick="add_genre();">new</button>
+        <button id="delete_genre" onclick="delete_genre();">delete</button>
+        <button id="update_genre" onclick="update_genre();">update</button>
+        <button id="get_genre" onclick="get_genre();">get by id</button>
+    </p><br>
+    <div id="result_genre"> </div>
+</div>
+<h1>Formats</h1>
+<div id="format">
+    format id   <input id="format_id" type="number"/><br>
+    format name <input id="format_name" type="text" maxlength="20"/><br>
+    <p>
+        <button id="add_format" onclick="add_format();">new</button>
+        <button id="delete_format" onclick="delete_format();">delete</button>
+        <button id="update_format" onclick="update_format();">update</button>
+        <button id="get_format" onclick="get_format();">get by id</button>
+    </p><br>
+    <div id="result_format"> </div>
 </div>
 </body>
 </html>
