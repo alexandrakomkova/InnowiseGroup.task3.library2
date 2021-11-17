@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <script src = "crud_functions.js"></script>
+    <script src = "js_helper.js"></script>
+    <script src = "book.js"></script>
+    <meta charset="UTF-8">
+    <title>Library</title>
+</head>
+<body>
+<h1>Books</h1>
+<div id="book">
+    book id   <input id="book_id" type="number"/><br>
+    book title <input id="book_title" type="text" maxlength="100"/><br>
+    book description <input id="book_description" type="text" /><br>
+    author id <input id="authors_id" type="number" value="" title=""/><br>
+    publisher id <input id="publishers_id" type="number" value="" title=""/><br>
+    genre id <input id="genres_id" type="number" value="" title=""/><br>
+    format id <input id="formats_id" type="number" value="" title=""/><br>
+    <p>
+        <button id="add_books" onclick="add_book();">new book</button>
+        <button id="delete_books" onclick="delete_book();">delete book</button>
+        <button id="update_books" onclick="update_book();">update book</button>
+        <button id="get_books" onclick="get_book();">get book by id</button>
+    </p><br>
+    <div id="result_book"> </div>
+</div>
+</body>
+</html>
