@@ -44,7 +44,7 @@ function put(url) {
         }
     });
 }
-function get(url, json_data) {
+function get(url, json_data, result_block) {
     $.ajax({
         type: 'get',
         data: json_data,
@@ -52,11 +52,11 @@ function get(url, json_data) {
         url: url,
         dataType: 'json',
         error: function (request, error) {
-            console.log(arguments);
             alert(" Can't do because: " + error);
         },
-        success: function () {
-            alert(" Done ! ");
+        success: function (data) {
+            set_result_to_div(data, result_block)
         }
     });
+
 }

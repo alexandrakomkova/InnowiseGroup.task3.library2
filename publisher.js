@@ -15,5 +15,8 @@ function update_publisher(){
     put(form_instance_url(publisher_url, publisher_id),json);
 }
 function get_publisher(){
-    get(form_instance_url(publisher_url, publisher_id), json)
+    get(form_instance_url(publisher_url, publisher_id), json, 'result_publisher')
+}
+function get_all_publishers(){
+    get(publisher_url, json, 'result_publisher')
 }

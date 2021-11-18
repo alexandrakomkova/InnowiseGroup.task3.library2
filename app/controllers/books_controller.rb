@@ -1,16 +1,14 @@
 class BooksController < ApplicationController
   def index
     @books = Book.all
-    render json: { status: 'SUCCESS', data: @books }
+    render json: @books
   end
 
   def show
     @book = set_book
-    render json: { status: 'SUCCESS', data: @book }
+    render json: @book
   end
 
-  # GET /books/1
-  # POST /books
   def create
     @book = Book.new(book_params)
 

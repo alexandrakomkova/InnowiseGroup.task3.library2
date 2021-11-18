@@ -12,7 +12,7 @@ function add_book(){
     post(book_url, json)
 }
 function get_book(){
-    get(form_instance_url(book_url, book_id), json)
+    get(form_instance_url(book_url, book_id), json, 'result_book')
 }
 function delete_book() {
     delete_instance(form_instance_url(book_url, book_id));
