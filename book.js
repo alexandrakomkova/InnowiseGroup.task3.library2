@@ -20,3 +20,6 @@ function delete_book() {
 function update_book(){
     put(form_instance_url(book_url, book_id),json);
 }
+function get_all_books(){
+    get(book_url, json, 'result_book')
+}

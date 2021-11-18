@@ -14,5 +14,8 @@ function update_author(){
     put(form_instance_url(author_url, author_id),json);
 }
 function get_author(){
-    get(form_instance_url(author_url, author_id), json)
+    get(form_instance_url(author_url, author_id), json, 'result_author')
+}
+function get_all_authors(){
+    get(author_url, json, 'result_author')
 }

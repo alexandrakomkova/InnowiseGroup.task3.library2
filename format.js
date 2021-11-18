@@ -13,5 +13,8 @@ function update_format(){
     put(form_instance_url(format_url, format_id),json);
 }
 function get_format(){
-    get(form_instance_url(format_url, format_id), json)
+    get(form_instance_url(format_url, format_id), json, 'result_format')
+}
+function get_all_formats(){
+    get(format_url, json, 'result_format')
 }

@@ -13,5 +13,8 @@ function update_genre(){
     put(form_instance_url(genre_url, genre_id),json);
 }
 function get_genre(){
-    get(form_instance_url(genre_url, genre_id), json)
+    get(form_instance_url(genre_url, genre_id), json, 'result_genre')
+}
+function get_all_genres(){
+    get(genre_url, json, 'result_genre')
 }
