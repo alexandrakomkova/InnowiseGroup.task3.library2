@@ -21,7 +21,7 @@
         <button id="update_book" onclick="update_book();">update</button>
         <button id="get_book" onclick="get_book();">get by id</button>
     </p><br>
-    <div id="result_book"> </div>
+    <div id="result_book"></div>
 </div>
 <h1>Genres</h1>
 <div id="genre">
@@ -48,6 +48,34 @@
     <div id="result_format"> </div>
 </div>
 
+<h1>Authors</h1>
+<div id="author">
+    author id   <input id="author_id" type="number" min="1"/><br>
+    author name <input id="author_name" type="text" maxlength="20"/><br>
+    author surname <input id="author_surname" type="text" maxlength="20"/><br>
+    <p>
+        <button id="add_author" onclick="add_author();">new</button>
+        <button id="delete_author" onclick="delete_author();">delete</button>
+        <button id="update_author" onclick="update_author();">update</button>
+        <button id="get_author" onclick="get_author();">get by id</button>
+    </p><br>
+    <div id="result_author"> </div>
+</div>
+
+<h1>Publishers</h1>
+<div id="publisher">
+    publisher id   <input id="publisher_id" type="number" min="1"/><br>
+    publisher name <input id="publisher_name" type="text" maxlength="20"/><br>
+    publisher address <input id="publisher_address" type="text" maxlength="50"/><br>
+    publisher phone <input id="publisher_phone" type="text" maxlength="10"/><br>
+    <p>
+        <button id="add_publisher" onclick="add_publisher();">new</button>
+        <button id="delete_publisher" onclick="delete_publisher();">delete</button>
+        <button id="update_publisher" onclick="update_publisher();">update</button>
+        <button id="get_publisher" onclick="get_publisher();">get by id</button>
+    </p><br>
+    <div id="result_publisher"> </div>
+</div>
 
 <script
         src="https://code.jquery.com/jquery-2.2.4.js"
