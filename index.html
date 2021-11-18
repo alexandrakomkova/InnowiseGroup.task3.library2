@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
-    <script src = "crud_functions.js"></script>
-    <script src = "js_helper.js"></script>
-    <script src = "book.js"></script>
-    <script src = "genre.js"></script>
     <meta charset="UTF-8">
     <title>Library</title>
 </head>
 <body>
+
 <h1>Books</h1>
 <div id="book">
-    book id   <input id="book_id" type="number"/><br>
+    book id   <input id="book_id" type="number" min="1"/><br>
     book title <input id="book_title" type="text" maxlength="100"/><br>
     book description <input id="book_description" type="text" /><br>
     author id <input id="authors_id" type="number" value="" title=""/><br>
@@ -29,7 +25,7 @@
 </div>
 <h1>Genres</h1>
 <div id="genre">
-    genre id   <input id="genre_id" type="number"/><br>
+    genre id   <input id="genre_id" type="number" min="1"/><br>
     genre name <input id="genre_name" type="text" maxlength="20"/><br>
     <p>
         <button id="add_genre" onclick="add_genre();">new</button>
@@ -41,7 +37,7 @@
 </div>
 <h1>Formats</h1>
 <div id="format">
-    format id   <input id="format_id" type="number"/><br>
+    format id   <input id="format_id" type="number" min="1"/><br>
     format name <input id="format_name" type="text" maxlength="20"/><br>
     <p>
         <button id="add_format" onclick="add_format();">new</button>
@@ -51,5 +47,16 @@
     </p><br>
     <div id="result_format"> </div>
 </div>
+
+
+<script
+        src="https://code.jquery.com/jquery-2.2.4.js"
+        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+        crossorigin="anonymous"></script>
+<script src = "crud_functions.js"></script>
+<script src = "js_helper.js"></script>
+<script src = "book.js"></script>
+<script src = "genre.js"></script>
+<script src = "format.js"></script>
 </body>
 </html>
