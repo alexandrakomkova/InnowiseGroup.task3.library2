@@ -2,7 +2,7 @@
 #
 # .rubocop.yml
 class GenresController < ApplicationController
-  # before_action :set_book, only: [:show, :update, :destroy]
+  before_action :set_genre, only: [:show, :update, :destroy]
 
       # GET /books
   def index

@@ -1,4 +1,8 @@
+# frozen_string_literal: true
+
+# .rubocop.yml
 class BooksController < ApplicationController
+  before_action :set_author, only: [:show, :update, :destroy]
   def index
     @books = Book.all
     render json: @books
