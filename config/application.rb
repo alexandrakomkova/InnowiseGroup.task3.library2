@@ -26,10 +26,9 @@ module Library2
     config.middleware.insert_before ActionDispatch::Static, Rack::Cors do
       allow do
         origins '*'
-        resource '*', headers: :any, methods: [:get, :post, :options]
+        resource '*', :headers => :any, :methods => [:get, :post, :options, :put, :delete]
       end
     end
-
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

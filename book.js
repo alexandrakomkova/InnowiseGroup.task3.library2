@@ -1,5 +1,4 @@
 book_url = 'http://localhost:3000/books';
-book_id = document.getElementById("book_id").value;
 json = {
     "title": document.getElementById('book_title').value,
     "body": document.getElementById('book_description').value,
@@ -12,13 +11,15 @@ function add_book(){
     post(book_url, json)
 }
 function get_book(){
-    //alert(" Done ! ");
+    let book_id = document.getElementById("book_id").value.toString();
     get(form_instance_url(book_url, book_id).trim(), 'result_book')
 }
 function delete_book() {
+    let book_id = document.getElementById("book_id").value.toString();
     delete_instance(form_instance_url(book_url, book_id));
 }
 function update_book(){
+    let book_id = document.getElementById("book_id").value.toString();
     put(form_instance_url(book_url, book_id),json);
 }
 function get_all_books(){
