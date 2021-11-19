@@ -40,7 +40,7 @@ class GenresController < ApplicationController
 
   # DELETE /genres/1
   def destroy
-    @genre = genre_params
+    @genre =set_genre
     @genre.destroy
     render json: { message: 'deleted genre', data: @genre }
   end

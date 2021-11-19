@@ -6,6 +6,7 @@ function add_genre(){
     post(genre_url, json)
 }
 function delete_genre() {
+    let genre_id = document.getElementById('genre_id').value.toString();
     delete_instance(form_instance_url(genre_url, genre_id));
 }
 function update_genre(){
