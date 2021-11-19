@@ -7,13 +7,13 @@ class FormatsController < ApplicationController
       # GET /books
   def index
     @formats = Format.all
-    render json: { status: 'SUCCESS', data: @formats }
+    render json: @formats
   end
 
       # GET /books/1
   def show
     @format = set_format
-    render json: { status: 'SUCCESS', data: @format }
+    render json: @format
   end
 
       # POST /books
@@ -21,9 +21,9 @@ class FormatsController < ApplicationController
     @format = Format.new(format_params)
 
     if @format.save
-      render json: { status: 'SUCCESS', data: @format }, status: :created
+      render json: @format, status: :created
     else
-      render json: { status: 'ERROR', data: @format.errors }, status: :unprocessable_entity
+      render json: @format.errors, status: :unprocessable_entity
     end
   end
 
@@ -32,9 +32,9 @@ class FormatsController < ApplicationController
     @format = Format.find(params[:id])
 
     if @format.update(format_params)
-      render json: { status: 'SUCCESS', data: @format }
+      render json: @format
     else
-      render json: { status: 'ERROR', data: @format.errors }, status: :unprocessable_entity
+      render json: @format.errors, status: :unprocessable_entity
     end
   end
 
@@ -42,7 +42,7 @@ class FormatsController < ApplicationController
   def destroy
     @format = Format.find(params[:id])
     @format.destroy
-    render json: { status: 'SUCCESS', message: 'deleted format', data: @format }
+    render json: { message: 'deleted format', data: @format }
   end
 
       private

@@ -7,13 +7,13 @@ class GenresController < ApplicationController
       # GET /books
   def index
     @genres = Genre.all
-    render json: { status: 'SUCCESS', data: @genres }
+    render json: @genres
   end
 
       # GET /books/1
   def show
     @genre = Genre.find(params[:id])
-    render json: { status: 'SUCCESS', data: @genre }
+    render json: @genre
   end
 
       # POST /books
@@ -21,9 +21,9 @@ class GenresController < ApplicationController
     @genre = Genre.new(genre_params)
 
     if @genre.save
-      render json: { status: 'SUCCESS', data: @genre }, status: :created
+      render json: @genre, status: :created
     else
-      render json: { status: 'ERROR', data: @genre.errors }, status: :unprocessable_entity
+      render json: @genre.errors, status: :unprocessable_entity
     end
   end
 
@@ -32,9 +32,9 @@ class GenresController < ApplicationController
     @genre = genre_params
 
     if @genre.update(genre_params)
-      render json: { status: 'SUCCESS', data: @genre }
+      render json: @genre
     else
-      render json: { status: 'ERROR', data: @genre.errors }, status: :unprocessable_entity
+      render json: @genre.errors, status: :unprocessable_entity
     end
   end
 
@@ -42,7 +42,7 @@ class GenresController < ApplicationController
   def destroy
     @genre = genre_params
     @genre.destroy
-    render json: { status: 'SUCCESS', message: 'deleted genre', data: @genre }
+    render json: { message: 'deleted genre', data: @genre }
   end
 
       private

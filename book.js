@@ -12,7 +12,8 @@ function add_book(){
     post(book_url, json)
 }
 function get_book(){
-    get(form_instance_url(book_url, book_id), json, 'result_book')
+    //alert(" Done ! ");
+    get(form_instance_url(book_url, book_id).trim(), 'result_book')
 }
 function delete_book() {
     delete_instance(form_instance_url(book_url, book_id));
@@ -21,5 +22,5 @@ function update_book(){
     put(form_instance_url(book_url, book_id),json);
 }
 function get_all_books(){
-    get(book_url, json, 'result_book')
+    get(book_url, 'result_book')
 }

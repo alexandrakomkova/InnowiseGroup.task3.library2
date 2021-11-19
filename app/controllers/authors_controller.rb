@@ -2,18 +2,18 @@
 
 # .rubocop.yml
 class AuthorsController < ApplicationController
-  before_action :set_book, only: [:show, :update, :destroy]
+  before_action :set_author, only: [:show, :update, :destroy]
 
       # GET /books
   def index
     @authors = Author.all
-    render json: { status: 'SUCCESS', data: @authors }
+    render json: @authors
   end
 
       # GET /books/1
   def show
     @author = set_author
-    render json: { status: 'SUCCESS', data: @author }
+    render json: @author
   end
 
       # POST /books
@@ -21,9 +21,9 @@ class AuthorsController < ApplicationController
     @author = Author.new(author_params)
 
     if @author.save
-      render json: { status: 'SUCCESS', data: @author }, status: :created
+      render json: @author, status: :created
     else
-      render json: { status: 'ERROR', data: @author.errors }, status: :unprocessable_entity
+      render json: @author.errors, status: :unprocessable_entity
     end
   end
 
@@ -32,9 +32,9 @@ class AuthorsController < ApplicationController
     @author = set_author
 
     if @author.update(author_params)
-      render json: { status: 'SUCCESS', data: @author }
+      render json: @author
     else
-      render json: { status: 'ERROR', data: @author.errors }, status: :unprocessable_entity
+      render json: @author.errors, status: :unprocessable_entity
     end
   end
 
@@ -42,7 +42,7 @@ class AuthorsController < ApplicationController
   def destroy
     @author = set_author
     @author.destroy
-    render json: { status: 'SUCCESS', message: 'deleted author', data: @author }
+    render json: { message: 'deleted author', data: @author }
   end
 
       private

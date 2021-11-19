@@ -7,13 +7,13 @@ class PublishersController < ApplicationController
       # GET /books
   def index
     @publishers = Publisher.all
-    render json: { status: 'SUCCESS', data: @publishers }
+    render json: @publishers
   end
 
       # GET /books/1
   def show
     @publisher = Publisher.find(params[:id])
-    render json: { status: 'SUCCESS', data: @publisher }
+    render json: @publisher
   end
 
       # POST /books
@@ -21,9 +21,9 @@ class PublishersController < ApplicationController
     @publisher = Publisher.new(publisher_params)
 
     if @publisher.save
-      render json: { status: 'SUCCESS', data: @publisher }, status: :created
+      render json: @publisher, status: :created
     else
-      render json: { status: 'ERROR', data: @publisher.errors }, status: :unprocessable_entity
+      render json: @publisher.errors, status: :unprocessable_entity
     end
   end
 
@@ -32,9 +32,9 @@ class PublishersController < ApplicationController
     @publisher = Publisher.find(params[:id])
 
     if @publisher.update(publisher_params)
-      render json: { status: 'SUCCESS', data: @publisher }
+      render json: @publisher
     else
-      render json: { status: 'ERROR', data: @publisher.errors }, status: :unprocessable_entity
+      render json: @publisher.errors, status: :unprocessable_entity
     end
   end
 
@@ -42,7 +42,7 @@ class PublishersController < ApplicationController
   def destroy
     @publisher = Publisher.find(params[:id])
     @publisher.destroy
-    render json: { status: 'SUCCESS', message: 'deleted publisher', data: @publisher }
+    render json: { message: 'deleted publisher', data: @publisher }
   end
 
       private

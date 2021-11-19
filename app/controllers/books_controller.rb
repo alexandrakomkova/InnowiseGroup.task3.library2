@@ -2,7 +2,7 @@
 
 # .rubocop.yml
 class BooksController < ApplicationController
-  before_action :set_author, only: [:show, :update, :destroy]
+  before_action :set_book, only: [:show, :update, :destroy]
   def index
     @books = Book.all
     render json: @books
@@ -17,9 +17,9 @@ class BooksController < ApplicationController
     @book = Book.new(book_params)
 
     if @book.save
-      render json: { status: 'SUCCESS', data: @book }, status: :created
+      render json: @book, status: :created
     else
-      render json: { status: 'ERROR', data: @book.errors }, status: :unprocessable_entity
+      render json: @book.errors, status: :unprocessable_entity
     end
   end
 
@@ -28,9 +28,9 @@ class BooksController < ApplicationController
     @book = set_book
 
     if @book.update(book_params)
-      render json: { status: 'SUCCESS', data: @book }
+      render json: @book
     else
-      render json: { status: 'ERROR', data: @book.errors }, status: :unprocessable_entity
+      render json: @book.errors, status: :unprocessable_entity
     end
   end
 
@@ -38,7 +38,7 @@ class BooksController < ApplicationController
   def destroy
     @book = set_book
     @book.destroy
-    render json: { status: 'SUCCESS', message: 'deleted book', data: @book }
+    render json: {message: 'deleted book', data: @book }
   end
 
   private
@@ -52,42 +52,3 @@ class BooksController < ApplicationController
     params.require(:book).permit(:title, :body, :authors_id, :publishers_id, :genres_id, :formats_id)
   end
 end
-
-=begin
-
-  def show
-    @book = set_book
-    render json: { status: 'SUCCESS', data: @book }
-  end
-
-  # POST /books
-  def create
-    @book = Book.new(book_params)
-
-    if @book.save
-      render json: { status: 'SUCCESS', data: @book }, status: :created
-    else
-      render json: { status: 'ERROR', data: @book.errors }, status: :unprocessable_entity
-    end
-  end
-
-  # PATCH/PUT /books/1
-  def update
-    @book = set_book
-
-    if @book.update(book_params)
-      render json: { status: 'SUCCESS', data: @book }
-    else
-      render json: { status: 'ERROR', data: @book.errors }, status: :unprocessable_entity
-    end
-  end
-
-  # DELETE /books/1
-  def destroy
-    @book = set_book
-    @book.destroy
-    render json: { status: 'SUCCESS', message: 'deleted book', data: @book }
-  end
-
-
-=end
