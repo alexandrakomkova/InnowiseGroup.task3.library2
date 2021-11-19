@@ -29,7 +29,7 @@ class GenresController < ApplicationController
 
   # PATCH/PUT /genres/1
   def update
-    @genre = genre_params
+    @genre = set_genre
 
     if @genre.update(genre_params)
       render json: @genre
@@ -55,5 +55,5 @@ class GenresController < ApplicationController
   def genre_params
     params.permit(:genre)
   end
-    end
+end
 

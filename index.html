@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Library</title>
-
-    <script type="text/javascript" src = 'js/crud_functions.js' async></script>
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.js"
+            integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+            crossorigin="anonymous"></script>
     <script type="text/javascript" src = 'js/js_helper.js' async></script>
+    <script type="text/javascript" src = 'js/crud_functions.js' async></script>
 </head>
 <body>
 
@@ -23,7 +26,7 @@
         <button id="delete_book" onclick="delete_book();">delete</button>
         <button id="update_book" onclick="update_book();">update</button>
         <button id="get_book" onclick="get_book();">get by id</button>
-        <button id="get_all_books" onclick="get(book_url, 'result_book');">view all</button>
+        <button id="get_all_books" onclick="get_all_books();">view all</button>
     </p><br>
     <div id="result_book"></div>
 </div>
@@ -36,7 +39,7 @@
         <button id="delete_genre" onclick="delete_genre();">delete</button>
         <button id="update_genre" onclick="update_genre();">update</button>
         <button id="get_genre" onclick="get_genre();">get by id</button>
-        <button id="get_all_genres" onclick="get(genre_url, 'result_genre');">view all</button>
+        <button id="get_all_genres" onclick="get_all_genres();">view all</button>
     </p><br>
     <div id="result_genre"> </div>
 </div>
@@ -49,7 +52,7 @@
         <button id="delete_format" onclick="delete_format();">delete</button>
         <button id="update_format" onclick="update_format();">update</button>
         <button id="get_format" onclick="get_format();">get by id</button>
-        <button id="get_all_formats" onclick="get(format_url, 'result_format');">view all</button>
+        <button id="get_all_formats" onclick="get_all_formats();">view all</button>
     </p><br>
     <div id="result_format"> </div>
 </div>
@@ -64,7 +67,7 @@
         <button id="delete_author" onclick="delete_author();">delete</button>
         <button id="update_author" onclick="update_author();">update</button>
         <button id="get_author" onclick="get_author();">get by id</button>
-        <button id="get_all_authors" onclick="get(author_url, 'result_author');">view all</button>
+        <button id="get_all_authors" onclick="get_all_authors();">view all</button>
     </p><br>
     <div id="result_author"> </div>
 </div>
@@ -80,20 +83,12 @@
         <button id="delete_publisher" onclick="delete_publisher();">delete</button>
         <button id="update_publisher" onclick="update_publisher();">update</button>
         <button id="get_publisher" onclick="get_publisher();">get by id</button>
-        <button id="get_all_publishers" onclick="get(publisher_url, 'result_publisher');">view all</button>
+        <button id="get_all_publishers" onclick="get_all_publishers();">view all</button>
     </p><br>
     <div id="result_publisher"> </div>
 </div>
 
 
 </body>
-<script
-        src="https://code.jquery.com/jquery-2.2.4.js"
-        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
-        crossorigin="anonymous"></script>
-<script type="text/javascript" src = 'js/genre.js' async></script>
-<script type="text/javascript" src = 'js/book.js' async></script>
-<script type="text/javascript" src = 'js/format.js' async></script>
-<script type="text/javascript" src = 'js/author.js' async></script>
-<script type="text/javascript" src = 'js/publisher.js' async></script>
+
 </html>

@@ -18,7 +18,7 @@ class FormatsController < ApplicationController
 
   # POST /formats
   def create
-    @format = Format.new(format_params)
+    @format = set_format
 
     if @format.save
       render json: @format, status: :created
@@ -29,7 +29,7 @@ class FormatsController < ApplicationController
 
   # PATCH/PUT /formats/1
   def update
-    @format = Format.find(params[:id])
+    @format = set_format
 
     if @format.update(format_params)
       render json: @format
@@ -40,7 +40,7 @@ class FormatsController < ApplicationController
 
   # DELETE /formats/1
   def destroy
-    @format = Format.find(params[:id])
+    @format = set_format
     @format.destroy
     render json: { message: 'deleted format', data: @format }
   end

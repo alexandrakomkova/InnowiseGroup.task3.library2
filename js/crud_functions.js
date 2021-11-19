@@ -35,7 +35,6 @@ function put(url, json_data) {
         url: url,
         dataType: 'json',
         error: function (request, error) {
-            console.log(arguments);
             error_alert(error)
         },
         success: function () {
