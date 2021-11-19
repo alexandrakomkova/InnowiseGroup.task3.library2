@@ -4,19 +4,19 @@
 class FormatsController < ApplicationController
   before_action :set_format, only: [:show, :update, :destroy]
 
-      # GET /books
+  # GET /formats
   def index
     @formats = Format.all
     render json: @formats
   end
 
-      # GET /books/1
+  # GET /formats/1
   def show
     @format = set_format
     render json: @format
   end
 
-      # POST /books
+  # POST /formats
   def create
     @format = Format.new(format_params)
 
@@ -27,7 +27,7 @@ class FormatsController < ApplicationController
     end
   end
 
-      # PATCH/PUT /books/1
+  # PATCH/PUT /formats/1
   def update
     @format = Format.find(params[:id])
 
@@ -38,7 +38,7 @@ class FormatsController < ApplicationController
     end
   end
 
-      # DELETE /books/1
+  # DELETE /formats/1
   def destroy
     @format = Format.find(params[:id])
     @format.destroy
@@ -46,12 +46,12 @@ class FormatsController < ApplicationController
   end
 
       private
-      # Use callbacks to share common setup or constraints between actions.
+  # Use callbacks to share common setup or constraints between actions.
   def set_format
     @format = Format.find(params[:id])
   end
 
-      # Only allow a list of trusted parameters through.
+  # Only allow a list of trusted parameters through.
   def format_params
     params.permit(:format)
   end

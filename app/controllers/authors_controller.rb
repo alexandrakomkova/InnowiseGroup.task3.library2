@@ -4,19 +4,19 @@
 class AuthorsController < ApplicationController
   before_action :set_author, only: [:show, :update, :destroy]
 
-      # GET /books
+  # GET /authors
   def index
     @authors = Author.all
     render json: @authors
   end
 
-      # GET /books/1
+  # GET /authors/1
   def show
     @author = set_author
     render json: @author
   end
 
-      # POST /books
+  # POST /authors
   def create
     @author = Author.new(author_params)
 
@@ -27,7 +27,7 @@ class AuthorsController < ApplicationController
     end
   end
 
-      # PATCH/PUT /books/1
+  # PATCH/PUT /authors/1
   def update
     @author = set_author
 
@@ -38,7 +38,7 @@ class AuthorsController < ApplicationController
     end
   end
 
-      # DELETE /books/1
+  # DELETE /authors/1
   def destroy
     @author = set_author
     @author.destroy
@@ -46,12 +46,12 @@ class AuthorsController < ApplicationController
   end
 
       private
-      # Use callbacks to share common setup or constraints between actions.
+  # Use callbacks to share common setup or constraints between actions.
   def set_author
     @author = Author.find(params[:id])
   end
 
-      # Only allow a list of trusted parameters through.
+  # Only allow a list of trusted parameters through.
   def author_params
     params.require(:author).permit(:name, :surname)
   end

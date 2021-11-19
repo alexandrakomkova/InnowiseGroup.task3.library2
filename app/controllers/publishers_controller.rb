@@ -4,19 +4,19 @@
 class PublishersController < ApplicationController
   before_action :set_publisher, only: [:show, :update, :destroy]
 
-      # GET /books
+  # GET /publishers
   def index
     @publishers = Publisher.all
     render json: @publishers
   end
 
-      # GET /books/1
+  # GET /books/1
   def show
     @publisher = Publisher.find(params[:id])
     render json: @publisher
   end
 
-      # POST /books
+  # POST /publishers
   def create
     @publisher = Publisher.new(publisher_params)
 
@@ -27,7 +27,7 @@ class PublishersController < ApplicationController
     end
   end
 
-      # PATCH/PUT /books/1
+  # PATCH/PUT /publishers/1
   def update
     @publisher = Publisher.find(params[:id])
 
@@ -38,7 +38,7 @@ class PublishersController < ApplicationController
     end
   end
 
-      # DELETE /books/1
+  # DELETE /publishers/1
   def destroy
     @publisher = Publisher.find(params[:id])
     @publisher.destroy
@@ -46,12 +46,12 @@ class PublishersController < ApplicationController
   end
 
       private
-      # Use callbacks to share common setup or constraints between actions.
+  # Use callbacks to share common setup or constraints between actions.
   def set_publisher
     @publisher = Publisher.find(params[:id])
   end
 
-      # Only allow a list of trusted parameters through.
+  # Only allow a list of trusted parameters through.
   def publisher_params
     params.require(:publisher).permit(:name, :address, :phone)
   end
