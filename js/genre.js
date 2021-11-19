@@ -1,8 +1,11 @@
 genre_url = 'http://localhost:3000/genres';
 let json = {
-    "genre": document.getElementById('genre_name').value
+    "genre": document.getElementById('genre_name').value.toString()
 }
 function add_genre(){
+    let json = {
+        "genre": document.getElementById('genre_name').value.toString()
+    }
     post(genre_url, json)
 }
 function delete_genre() {

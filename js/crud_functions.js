@@ -27,9 +27,10 @@ function delete_instance(url) {
         }
     });
 }
-function put(url) {
+function put(url, json_data) {
     $.ajax({
-        type: 'delete',
+        type: 'put',
+        data: json_data,
         cache: false,
         url: url,
         dataType: 'json',

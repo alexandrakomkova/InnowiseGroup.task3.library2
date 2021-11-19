@@ -1,8 +1,8 @@
 author_url = 'http://localhost:3000/authors';
 
 let json = {
-    "name": document.getElementById('author_name').value,
-    "surname": document.getElementById('author_surname').value,
+    "name": document.getElementById('author_name').value.toString(),
+    "surname": document.getElementById('author_surname').value.toString()
 }
 function add_author(){
     post(author_url, json)

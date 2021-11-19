@@ -1,6 +1,7 @@
-format_url = 'http://localhost:3000/formats';
+format_url = "http://localhost:3000/formats";
+publisher_url = 'http://localhost:3000/publishers';
 let json = {
-    "format": document.getElementById('format_name').value,
+    "format": document.getElementById("format_name").value.toString()
 }
 function add_format(){
     post(format_url, json)
