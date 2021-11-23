@@ -52,7 +52,7 @@ function get(url, result_block) {
            error_alert(error)
         },
         success: function (data) {
-            set_result_to_div(data, result_block)
+            check_data_type(data, result_block)
         }
     });
 

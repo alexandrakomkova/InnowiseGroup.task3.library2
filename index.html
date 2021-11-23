@@ -28,7 +28,20 @@
         <button id="get_book" onclick="get_book();">get by id</button>
         <button id="get_all_books" onclick="get_all_books();">view all</button>
     </p><br>
-    <div id="result_book"></div>
+    <table id="result_book" >
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>title</th>
+            <th>description</th>
+            <th>author_id</th>
+            <th>publisher_id</th>
+            <th>genre_id</th>
+            <th>format_id</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
 </div>
 <h1>Genres</h1>
 <div id="genre">
@@ -41,7 +54,15 @@
         <button id="get_genre" onclick="get_genre();">get by id</button>
         <button id="get_all_genres" onclick="get_all_genres();">view all</button>
     </p><br>
-    <div id="result_genre"> </div>
+    <table id="result_genre">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>genre</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
 </div>
 <h1>Formats</h1>
 <div id="format">
@@ -54,7 +75,15 @@
         <button id="get_format" onclick="get_format();">get by id</button>
         <button id="get_all_formats" onclick="get_all_formats();">view all</button>
     </p><br>
-    <div id="result_format"> </div>
+    <table id="result_format">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>format</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
 </div>
 
 <h1>Authors</h1>
@@ -69,7 +98,16 @@
         <button id="get_author" onclick="get_author();">get by id</button>
         <button id="get_all_authors" onclick="get_all_authors();">view all</button>
     </p><br>
-    <div id="result_author"> </div>
+    <table id="result_author">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>surname</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
 </div>
 
 <h1>Publishers</h1>
@@ -85,7 +123,17 @@
         <button id="get_publisher" onclick="get_publisher();">get by id</button>
         <button id="get_all_publishers" onclick="get_all_publishers();">view all</button>
     </p><br>
-    <div id="result_publisher"> </div>
+    <table id="result_publisher">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>address</th>
+            <th>phone</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
 </div>
 
 
